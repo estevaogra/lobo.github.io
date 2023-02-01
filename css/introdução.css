@@ -1,0 +1,67 @@
+.introdução {
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+  align-items: center;
+}
+.introdução h1 {
+  font-size: 4.5rem;
+  font-weight: 700px;
+  line-height: 1.125;
+  margin-bottom: 30px;
+  position: relative;
+}
+.introdução p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.16;
+  color: #525252;
+}
+.introdução h1::before {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 100px;
+  background: url("../img/detalhe.svg") no-repeat center;
+  position: absolute;
+  top: -15px;
+  left: -40px;
+  z-index: -1;
+}
+@media (max-width: 1000px) {
+  .introdução h1 {
+    font-size: 3rem;
+  }
+  .introdução h1::before {
+    height: 70px;
+    width: 100px;
+  }
+}
+@media (max-width: 800px) {
+  .introdução {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .introdução h1 {
+    font-size: 2rem;
+  }
+  .introdução h1::before {
+    width: 30px;
+    height: 10px;
+    left: 0px; /*como a posição do título é relativa, 0px vai colocar a imagem no começo do título */
+  }
+  .introdução p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 400px) {
+  .introdução img {
+    display: none;
+  }
+  .introdução {
+    grid-template-columns: 1fr;
+  }
+}
